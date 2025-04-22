@@ -1,69 +1,78 @@
-let cartCount = 0; // Variable para llevar el conteo de los productos en el carrito
-        let cartItems = []; // Array para almacenar los productos en el carrito
+let carritoItems = [];  
+let carritoContador = 0;   
 
-        // Función para agregar productos al carrito
-        function addToCart(productName, productPrice) {
-            // Comprobar si el producto ya está en el carrito
-            let product = cartItems.find(item => item.name === productName);
-        
-            if (product) {
-                // Si el producto ya existe, aumentar la cantidad
-                product.quantity++;
-            } else {
-                // Si el producto no existe, añadirlo al carrito con cantidad 1
-                cartItems.push({ name: productName, price: productPrice, quantity: 1 });
-            }
-        
-            // Actualizar el contador de productos en el carrito
-            updateCartCount();
-            // Actualizar el modal con los productos
-            updateCartModal();
-        }
+function anadirCarrito(nombreProducto, precioProducto, tallaProducto, imagenProducto) {
+    // Se usa la una funcion para comprobar si item ya esta
+    let producto = carritoItems.find(item => item.name === nombreProducto && item.size === tallaProducto);
 
-        // Función para actualizar el modal con los productos del carrito
-        function updateCartModal() {
-            const cartProductsList = document.getElementById('cart-products-list');
-            cartProductsList.innerHTML = ''; // Limpiar la lista antes de actualizar
-
-            cartItems.forEach((item, index) => {
-                const listItem = document.createElement('li');
-                listItem.classList.add('d-flex', 'justify-content-between', 'align-items-center');
-                listItem.innerHTML = `
-                    ${item.name} - $${item.price} 
-                    <input type="number" class="quantity-input" value="${item.quantity}" min="1" onchange="updateQuantity(${index}, this.value)">
-                    <button class="btn btn-danger btn-sm" onclick="removeFromCart(${index})">Eliminar</button>
-                `;
-                cartProductsList.appendChild(listItem);
-            });
-        }
-
-        // Función para actualizar la cantidad de un producto en el carrito
-        function updateQuantity(index, newQuantity) {
-            newQuantity = parseInt(newQuantity); // Asegurarse de que sea un número
-        
-            if (newQuantity > 0) {
-                cartItems[index].quantity = newQuantity;
-                updateCartCount(); // Volver a actualizar el contador
-                updateCartModal(); // Volver a actualizar el modal
-            }
-        }
-
-        // Función para eliminar productos del carrito
-        function removeFromCart(index) {
-            cartCount -= cartItems[index].quantity; // Reducir el contador de productos
-            cartItems.splice(index, 1); // Eliminar el producto del carrito
-            updateCartCount(); // Actualizar el contador de productos
-            updateCartModal(); // Actualizar la lista del carrito en el modal
-        }
-
-        function updateCartCount() {
-            cartCount = cartItems.reduce((total, item) => total + item.quantity, 0);
-            document.getElementById('cart-count').innerText = cartCount; // Actualizar el contador visualmente
-        }
+    if (producto) {
+        producto.quantity++;
+    } else {
+        // Si el producto no existe, añadirlo al carrito con cantidad 1
+        carritoItems.push({ 
+            name: nombreProducto, 
+            price: precioProducto, 
+            quantity: 1, 
+            size: tallaProducto, 
+            image: imagenProducto 
+        });
+    }
 
 
-        // Función para finalizar la compra
+    actualizarContador();
+    actualizarModalCarrito();
+}
+
+// Función para actualizar el modal con los productos del carrito
+function actualizarModalCarrito() {
+    const listaDeProductos = document.getElementById('cart-products-list');
+    listaDeProductos.innerHTML = ''; 
+
+    carritoItems.forEach((item, index) => {
+        const listaItems = document.createElement('li');
+        listaItems.classList.add('d-flex', 'justify-content-between', 'align-items-center');
+        listaItems.innerHTML = `
+            <div class="d-flex">
+                <img src="${item.image}" alt="${item.name}" style="width: 50px; height: 50px; margin-right: 10px;">
+                <div style="margin-right: 10px;">
+                    <div class="fw-bold">${item.name}</div>
+                    <div class="text-muted">$${item.price}</div>
+                    <div class="small">Talla: ${item.size}</div>
+                </div>
+            </div>
+            <input type="number" class="quantity-input" value="${item.quantity}" min="1" onchange="actualizarCantidad(${index}, this.value)">
+            <button class="btn btn-danger btn-sm" onclick="eliminarDelCarrito(${index})">Eliminar</button>
+        `;
+        listaDeProductos.appendChild(listaItems);
+    });
+}
+
+
+function actualizarCantidad(index, nuevaCantidad) {
+    nuevaCantidad = parseInt(nuevaCantidad); // Asegurarse de que sea un número
+
+    if (nuevaCantidad > 0) {
+        carritoItems[index].quantity = nuevaCantidad;
+        actualizarContador(); 
+        actualizarModalCarrito(); 
+    }
+}
+
+
+function eliminarDelCarrito(index) {
+    carritoContador -= carritoItems[index].quantity; // Reducir el contador de productos
+    carritoItems.splice(index, 1); // Eliminar el producto del carrito
+    actualizarContador(); 
+    actualizarModalCarrito();
+}
+
+
+function actualizarContador() {
+    carritoContador = carritoItems.reduce((total, item) => total + item.quantity, 0);
+    document.getElementById('cart-count').innerText = carritoContador; // Actualizar el contador visualmente
+}
+
+
         document.getElementById('finalize-purchase').addEventListener('click', function() {
             alert('¡Compra finalizada! Gracias por tu compra.');
-            // Aquí puedes redirigir a una página de confirmación o realizar otras acciones
         });

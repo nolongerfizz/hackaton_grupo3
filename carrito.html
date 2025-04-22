@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="carrito.css">
 </head>
 <body>
+
+    <!-- Nav provisional cambiar al de jhon-->>
     <ul class="navbar">
         <li><a href="index.html">Inicio</a></li>
         <li><a href="productos.html">Productos</a></li>
@@ -21,31 +23,50 @@
         </li>
     </ul>
 
-    <!-- Modal para el carrito -->
-    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="cartModalLabel">Carrito de Compras</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <ul id="cart-products-list">
-                        <!-- Productos se agregarán dinámicamente aquí -->
-                    </ul>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary" id="finalize-purchase">Finalizar Compra</button>
-                </div>
-            </div>
+   <!-- Modal-->
+<div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="cartModalLabel">Carrito de compras</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+        <div class="modal-body">
+          <ul id="cart-products-list"></ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" id= "finalize-purchase"class="btn btn-primary">Finalizar compra</button>
+        </div>
+      </div>
     </div>
+  </div>
+  
 
-    <!-- Botones para agregar productos (solo como ejemplo) -->
+
+    <div class="card" style="width: 18rem;">
+        <img src="https://via.placeholder.com/150" class="card-img-top" alt="Imagen del producto">
+        <div class="card-body">
+          <h5 class="card-title">Producto 1</h5>
+          <p class="card-text">$20</p>
+          
+
+          <select class="form-select" id="product-size-1">
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+          </select>
+          
+
+          <button class="btn btn-primary" onclick="anadirCarrito('Producto 1', 20, document.getElementById('product-size-1').value, 'https://via.placeholder.com/150')">Añadir al carrito</button>
+        </div>
+      </div>
+      
+
+    <!--(ejemplos) -->
     <div class="container">
-        <button class="btn btn-primary" onclick="addToCart('Producto 1', 10)">Añadir Producto 1</button>
-        <button class="btn btn-primary" onclick="addToCart('Producto 2', 15)">Añadir Producto 2</button>
+        <button class="btn btn-primary" onclick="anadirCarrito('Producto 1', 10, 'M', 'https://via.placeholder.com/50')">Añadir Producto 1 (Talla M)</button>
+        <button class="btn btn-primary" onclick="anadirCarrito('Producto 2', 15, 'L', 'https://via.placeholder.com/50')">Añadir Producto 2 (Talla L)</button>        
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
     <script src="carrito.js"></script>

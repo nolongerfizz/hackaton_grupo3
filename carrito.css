@@ -55,3 +55,52 @@
     padding: 5px 10px;
     font-size: 12px;
 }
+
+.btn-primary{
+    font-family: var(--fuente-principal);
+    background-color: #f15a29 ;
+    border-color: #f15a29;
+}
+
+.btn-primary:hover{
+    background-color: #e04d1a;
+    border-color: #e04d1a;
+}
+
+.btn-secondary{
+    background-color: var(--color-secundario);
+    font-family: var(--fuente-principal);
+    border-color: var(--color-secundario);
+}
+
+.btn-secondary:hover{
+    background-color: #19233a;
+    border-color: #19233a;
+}
+
+.modal-content{
+    background-color: var(--color-fondo);
+}
+
+.modal-title{
+    font-family: var(--fuente-principal);
+    color: var(--color-texto);
+}
+
+.fw-bold{
+    font-family: var(--fuente-principal);
+}
+
+.text-muted{
+    font-family: var(--fuente-principal);
+}
+
+.small{
+    font-family: var(--fuente-principal);
+}
+
+.quantity-input{
+    border: none;
+    box-shadow: none;
+    outline: none;
+}
