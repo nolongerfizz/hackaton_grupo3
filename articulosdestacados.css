@@ -1,0 +1,107 @@
+:root {
+    --color-principal: #f15a29;
+    --color-secundario: #1e2a47;
+    --color-acento: #cacaca;
+    --color-fondo: #f4f4f4;
+    --color-texto: #333333;
+    --color-boton: #f15a29;
+    --color-boton-hover: #e04d1a;
+    --fuente-principal: 'Roboto', sans-serif;
+    --fuente-secundaria: 'Arial', sans-serif;
+    --espaciado-base: 1rem;
+    --tamano-base: 16px;
+    --tamano-titulo: 2rem;
+    --tamano-subtitulo: 1.5rem;
+  }
+  
+  body {
+    font-family: var(--fuente-principal);
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+  }
+  
+  .card {
+  border: 2px solid transparent;
+  background-color: var(--color-acento);
+}
+
+.card:hover {
+  border-color: var(--color-principal);
+  background-color: #fffdfb;
+}
+
+.card-body {
+  border-top: 4px solid var(--color-principal);
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-secundario);
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: var(--color-texto);
+  line-height: 1.5;
+}
+
+.card:hover .card-title {
+  color: var(--color-principal);
+  transition: color 0.3s ease;
+}
+
+.card:hover .card-body {
+  background-color: #dcdcdc;
+  transition: background-color 0.3s ease;
+}
+
+.card-img-top {
+  transition: filter 0.3s ease, transform 0.3s ease;
+  object-fit: cover;
+  height: 600px; /* puedes ajustar según lo que se vea mejor */
+  width: 100%;
+}
+
+.card:hover .card-img-top {
+  filter: brightness(1.05);
+  transform: scale(1.02);
+}
+
+.featured-section-wrapper {
+    position: relative;
+    padding: 4rem 0;
+    background-color: transparent;
+    z-index: 1;
+  }
+  
+  .featured-section-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, var(--color-principal), var(--color-secundario));
+    border-radius: 24px;
+    z-index: 0;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  }
+  
+  .section-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--color-fondo);
+    text-align: center;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+    position: relative;
+    z-index: 2;
+  }
+
+  
+  
+  
+  
