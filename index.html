@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Athletik</title>
+    <!-- Icono logo-->
+    <link rel="icon" href="/assets/logoatletik.png" type="image/png">
+
     <!-- articulos destacados bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./footer.css">
@@ -13,10 +16,12 @@
     <link rel="stylesheet" href="css/logo.css">
     <!-- articulos destacados css-->
     <link rel="stylesheet" href="articulosdestacados.css"> 
+    <!-- carrito css-->
+    <link rel="stylesheet" href="carrito.css"> 
 </head>
 
 <body>
-  <!-- Jhon index-->
+  <!--Jhon index-->
   <section>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container-fluid">
@@ -39,7 +44,7 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-
+        <!-- agregar carrito-->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 ps-5 mb-lg-0 text-center">
             <li class="nav-item">
@@ -54,6 +59,15 @@
             <li class="nav-item">
               <a class="nav-link" href="#Ofertas">Ofertas del mes</a>
             </li>
+            <!-- Andres carrito -->
+            <li>
+                <a href="#" id="cart-icon" data-bs-toggle="modal" data-bs-target="#cartModal">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-bag-fill" viewBox="0 0 16 16">
+                        <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4z"/>
+                    </svg>
+                    <span class="cart-count" id="cart-count">0</span>
+                </a>
+            </li> 
           </ul>
 
           <form class="d-flex ms-auto" role="search">
@@ -148,6 +162,381 @@
     <h2>Accesorios Deportivos</h2>
     <p>Aquí estarán todos los productos de accesorios deportivos.</p>
   </div>
+
+  <!-- Andrea-->
+  <section>
+    <h2>Calzado</h2>
+    <div class="product-container">
+        <div class="product">
+            <div class="product-image">
+              <img
+                id="productImage1"
+                src="./assets/shoes/New Balance Fresh FoamX 1080 v13/New Balance Fresh FoamX 1080 v13.png"
+                onclick="changeImage('productImage1')"
+                class="img-fluid"
+                alt="Zapato"
+              />
+            </div>
+         
+            <div class="product-info">
+              <h3 class="product-name">New Balance Fresh FoamX 1080 v13</h3>
+              <p class="product-price">$850000</p>
+              <div class="product-size">
+                <p>Talla:</p>
+                <div class="size-buttons">
+                  <label><input type="radio" name="size1" value="34"> 37</label>
+                  <label><input type="radio" name="size1" value="35"> 38</label>
+                  <label><input type="radio" name="size1" value="36"> 40</label>
+                  <label><input type="radio" name="size1" value="37"> 41</label>
+                </div>
+              </div>
+              <button class="add-to-cart">Añadir al carrito</button>
+            </div>
+          </div>
+
+        <!-- Producto 2 -->
+        <div class="product">
+            <div class="product-image">
+              <img
+                id="productImage2"
+                src="./assets/shoes/Nike Pegasus 40/Nike Pegasus 40.png"
+                onclick="changeImage2('productImage2')"
+                class="img-fluid"
+                alt="Zapato"
+              />
+            </div>
+         
+            <div class="product-info">
+              <h3 class="product-name">Nike Pegasus40</h3>
+              <p class="product-price">$750000</p>
+              <div class="product-size">
+                <p>Talla:</p>
+                <div class="size-buttons">
+                  <label><input type="radio" name="size1" value="34"> 34</label>
+                  <label><input type="radio" name="size1" value="35"> 38</label>
+                  <label><input type="radio" name="size1" value="36"> 39</label>
+                  <label><input type="radio" name="size1" value="37"> 44</label>
+                </div>
+              </div>
+              <button class="add-to-cart">Añadir al carrito</button>
+            </div>
+          </div>
+
+        <!-- Producto 3 -->
+        <div class="product">
+            <div class="product-image3">
+              <img
+                id="productImage3"
+                src="./assets/shoes/Nike ZoomX Invincible Run Flyknit/Nike ZoomX Invincible Run Flyknit.png"
+                onclick="changeImage3('productImage3')"
+                class="img-fluid"
+                alt="Zapato"
+              />
+            </div>
+         
+            <div class="product-info">
+              <h3 class="product-name">Nike ZoomX Invincible Run Flyknit</h3>
+              <p class="product-price">$760000</p>
+              <div class="product-size">
+                <p>Talla:</p>
+                <div class="size-buttons">
+                  <label><input type="radio" name="size1" value="34"> 34</label>
+                  <label><input type="radio" name="size1" value="35"> 38</label>
+                  <label><input type="radio" name="size1" value="36"> 39</label>
+                  <label><input type="radio" name="size1" value="37"> 44</label>
+                </div>
+              </div>
+              <button class="add-to-cart">Añadir al carrito</button>
+            </div>
+          </div>
+
+        <!-- Producto 4 -->
+        <div class="product">
+            <div class="product-image4">
+              <img
+                id="productImage4"
+                src="./assets/shoes/Adidas Ultraboost 22/Adidas Ultraboost 22.png"
+                onclick="changeImage4('productImage4')"
+                class="img-fluid"
+                alt="Zapato"
+              />
+            </div>
+         
+            <div class="product-info">
+              <h3 class="product-name">Adidas Ultraboost 22</h3>
+              <p class="product-price">$850000</p>
+              <div class="product-size">
+                <p>Talla:</p>
+                <div class="size-buttons">
+                  <label><input type="radio" name="size1" value="34"> 34</label>
+                  <label><input type="radio" name="size1" value="35"> 38</label>
+                  <label><input type="radio" name="size1" value="36"> 39</label>
+                  <label><input type="radio" name="size1" value="37"> 44</label>
+                </div>
+              </div>
+              <button class="add-to-cart">Añadir al carrito</button>
+            </div>
+          </div>
+
+        <!-- Producto 5 -->
+        <div class="product">
+            <div class="product-image5">
+              <img
+                id="productImage5"
+                src="./assets/shoes/Saucony Endorphin Speed 3/Saucony Endorphin Speed 3.png"
+                onclick="changeImage5('productImage5')"
+                class="img-fluid"
+                alt="Zapato"
+              />
+            </div>
+         
+            <div class="product-info">
+              <h3 class="product-name">Saucony Endorphin Speed 3</h3>
+              <p class="product-price">$970000</p>
+              <div class="product-size">
+                <p>Talla:</p>
+                <div class="size-buttons">
+                  <label><input type="radio" name="size1" value="34"> 34</label>
+                  <label><input type="radio" name="size1" value="35"> 38</label>
+                  <label><input type="radio" name="size1" value="36"> 39</label>
+                  <label><input type="radio" name="size1" value="37"> 44</label>
+                </div>
+              </div>
+              <button class="add-to-cart">Añadir al carrito</button>
+            </div>
+          </div>
+
+
+        <!-- Producto 6 -->
+        <div class="product">
+            <div class="product-image6">
+              <img
+                id="productImage6"
+                src="./assets/shoes/Asics Gel-Kayano 29/Asics Gel-Kayano 29.png"
+                onclick="changeImage6('productImage6')"
+                class="img-fluid"
+                alt="Zapato"
+              />
+            </div>
+         
+            <div class="product-info">
+              <h3 class="product-name">Saucony Endorphin Speed 3</h3>
+              <p class="product-price">$970000</p>
+              <div class="product-size">
+                <p>Talla:</p>
+                <div class="size-buttons">
+                  <label><input type="radio" name="size1" value="34"> 34</label>
+                  <label><input type="radio" name="size1" value="35"> 38</label>
+                  <label><input type="radio" name="size1" value="36"> 39</label>
+                  <label><input type="radio" name="size1" value="37"> 44</label>
+                </div>
+              </div>
+              <button class="add-to-cart">Añadir al carrito</button>
+            </div>
+          </div>
+
+        <!-- Producto 7 -->
+        <div class="product">
+            <div class="product-image7">
+              <img
+                id="productImage7"
+                src="./assets/shoes/Nike Air Force 1/Nike Air Force 1-1.png"
+                onclick="changeImage7('productImage7')"
+                class="img-fluid"
+                alt="Zapato"
+              />
+            </div>
+         
+            <div class="product-info">
+              <h3 class="product-name">Nike Air Force 1-1.png</h3>
+              <p class="product-price">$640000</p>
+              <div class="product-size">
+                <p>Talla:</p>
+                <div class="size-buttons">
+                  <label><input type="radio" name="size1" value="34"> 34</label>
+                  <label><input type="radio" name="size1" value="35"> 38</label>
+                  <label><input type="radio" name="size1" value="36"> 42</label>
+                  <label><input type="radio" name="size1" value="37"> 44</label>
+                </div>
+              </div>
+              <button class="add-to-cart">Añadir al carrito</button>
+            </div>
+          </div>
+
+        <!-- Producto 8 -->
+        <div class="product">
+            <div class="product-image8">
+              <img
+                id="productImage8"
+                src="./assets/shoes/Adidas Samba OG/Adidas Samba OG-1.png"
+                onclick="changeImage8('productImage8')"
+                class="img-fluid"
+                alt="Zapato"
+              />
+            </div>
+         
+            <div class="product-info">
+              <h3 class="product-name">Samba OG</h3>
+              <p class="product-price">$640000</p>
+              <div class="product-size">
+                <p>Talla:</p>
+                <div class="size-buttons">
+                  <label><input type="radio" name="size1" value="34"> 34</label>
+                  <label><input type="radio" name="size1" value="35"> 38</label>
+                  <label><input type="radio" name="size1" value="36"> 42</label>
+                  <label><input type="radio" name="size1" value="37"> 44</label>
+                </div>
+              </div>
+              <button class="add-to-cart">Añadir al carrito</button>
+            </div>
+          </div>
+
+        <!-- Producto 9 (último agregado) -->
+        <div class="product">
+            <div class="product-image8">
+              <img
+                id="productImage9"
+                src="./assets/shoes/Puma Suede Classic/Puma Suede Classic.png"
+                onclick="changeImage9('productImage9')"
+                class="img-fluid"
+                alt="Zapato"
+              />
+            </div>
+         
+            <div class="product-info">
+              <h3 class="product-name">Puma Suede Classic</h3>
+              <p class="product-price">$530000</p>
+              <div class="product-size">
+                <p>Talla:</p>
+                <div class="size-buttons">
+                  <label><input type="radio" name="size1" value="34"> 34</label>
+                  <label><input type="radio" name="size1" value="35"> 36</label>
+                  <label><input type="radio" name="size1" value="36"> 42</label>
+                  <label><input type="radio" name="size1" value="37"> 44</label>
+                </div>
+              </div>
+              <button class="add-to-cart">Añadir al carrito</button>
+            </div>
+          </div>
+
+        <!-- Producto 10 (último agregado) -->
+        <div class="product">
+            <div class="product-image10">
+              <img
+                id="productImage10"
+                src="./assets/shoes/New Balance 990v5 /New Balance 990v5 .png"
+                onclick="changeImage10('productImage10')"
+                class="img-fluid"
+                alt="Zapato"
+              />
+            </div>
+         
+            <div class="product-info">
+              <h3 class="product-name">New Balance 990v5</h3>
+              <p class="product-price">$1030000</p>
+              <div class="product-size">
+                <p>Talla:</p>
+                <div class="size-buttons">
+                  <label><input type="radio" name="size1" value="34"> 37</label>
+                  <label><input type="radio" name="size1" value="35"> 40</label>
+                  <label><input type="radio" name="size1" value="36"> 41</label>
+                  <label><input type="radio" name="size1" value="37"> 45</label>
+                </div>
+              </div>
+              <button class="add-to-cart">Añadir al carrito</button>
+            </div>
+          </div>
+    </div>
+</section>
+<section>
+    <h2>Ropa</h2>
+    <div class="product-container">
+        <!-- Producto 11 -->
+        <div class="product">
+            <div class="product-image11">
+              <img
+                id="productImage11"
+                src="./assets/shoes/Nike Dri-FIT T-Shirt/Nike Dri-FIT T-Shirt-1.png"
+                onclick="changeImage11('productImage11')"
+                class="img-fluid"
+                alt="Zapato"
+              />
+            </div>
+         
+            <div class="product-info">
+              <h3 class="product-name">Nike Dri-FIT T-Shirt-1</h3>
+              <p class="product-price">$1030000</p>
+              <div class="product-size">
+                <p>Talla:</p>
+                <div class="size-buttons">
+                  <label><input type="radio" name="size1" value="34"> 37</label>
+                  <label><input type="radio" name="size1" value="35"> 40</label>
+                  <label><input type="radio" name="size1" value="36"> 41</label>
+                  <label><input type="radio" name="size1" value="37"> 45</label>
+                </div>
+              </div>
+              <button class="add-to-cart">Añadir al carrito</button>
+            </div>
+          </div>
+           <!-- Producto 12 -->
+        <div class="product">
+            <div class="product-image12">
+              <img
+                id="productImage12"
+                src="./assets/shoes/Nike Windrunner Jacket/Nike Windrunner Jacket.png"
+                onclick="changeImage12('productImage12')"
+                class="img-fluid"
+                alt="Zapato"
+              />
+            </div>
+         
+            <div class="product-info">
+              <h3 class="product-name">Nike Windrunner Jacket</h3>
+              <p class="product-price">$1530000</p>
+              <div class="product-size">
+                <p>Talla:</p>
+                <div class="size-buttons">
+                    <label><input type="radio" name="size1" value="S"> S</label>
+                    <label><input type="radio" name="size1" value="M"> M</label>
+                    <label><input type="radio" name="size1" value="L"> L</label>
+                    <label><input type="radio" name="size1" value="XL">XL</label>
+                </div>
+              </div>
+              <button class="add-to-cart">Añadir al carrito</button>
+            </div>
+          </div>
+           <!-- Producto 13 -->
+           <div class="product">
+            <div class="product-image13">
+              <img
+                id="productImage13"
+                src="./assets/shoes/Adidas Predator Gloves/Adidas Predator Gloves-1.png"
+                onclick="changeImage13('productImage13')"
+                class="img-fluid"
+                alt="Zapato"
+              />
+            </div>
+         
+            <div class="product-info">
+              <h3 class="product-name">Nike Windrunner Jacket</h3>
+              <p class="product-price">$930000</p>
+              <div class="product-size">
+                <p>Talla:</p>
+                <div class="size-buttons">
+                    <label><input type="radio" name="size1" value="S"> S</label>
+                    <label><input type="radio" name="size1" value="M"> M</label>
+                    <label><input type="radio" name="size1" value="L"> L</label>
+                    <label><input type="radio" name="size1" value="XL">XL</label>
+                </div>
+              </div>
+              <button class="add-to-cart">Añadir al carrito</button>
+            </div>
+          </div>
+</section>
+</section>
+
+
+  <!-- Andrea final-->
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>  
 
