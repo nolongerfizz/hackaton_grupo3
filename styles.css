@@ -1,0 +1,166 @@
+:root {
+    --color-principal: #f15a29;
+    --color-secundario: #1e2a47;
+    --color-acento: #34bfa3;
+    --color-fondo: #f4f4f4;
+    --color-texto: #333333;
+    --color-boton: #f15a29;
+    --color-boton-hover: #e04d1a;
+    --fuente-principal: 'Roboto', sans-serif;
+    --fuente-secundaria: 'Arial', sans-serif;
+    --espaciado-base: 1rem;
+    --tamano-base: 16px;
+    --tamano-titulo: 2rem;
+    --tamano-subtitulo: 1.5rem;
+  }
+  
+  .hero-section {
+    padding-top: 6rem;
+    padding-bottom: 3rem;
+    background-color: #000;
+    color: white;
+    text-align: center;
+    position: relative;
+    background-image: url("images/2611250.gif");
+    background-size: cover; 
+    background-position: center center; 
+    background-attachment: fixed; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; 
+  }
+
+  body {
+    padding-top: 20px; 
+  }
+
+  .video-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+  
+  .video {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+  }
+  
+  .left-video {
+    clip-path: polygon(0 0, 100% 0, 50% 100%, 0% 100%);
+    animation: moveLeftToCenter 2s ease-out forwards;
+    left: -50%;
+  }
+  
+  .right-video {
+    clip-path: polygon(50% 0, 100% 0, 100% 100%, 0 100%);
+    animation: moveRightToCenter 2s ease-out forwards;
+    right: -50%;
+  }
+  
+  .hero-content {
+    z-index: 2;
+    position: relative;
+    max-width: 80%;
+    color: white;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  }
+  
+  /* Animaciones */
+  @keyframes moveLeftToCenter {
+    0% {
+      left: -50%;
+    }
+    100% {
+      left: 0;
+    }
+  }
+  
+  @keyframes moveRightToCenter {
+    0% {
+      right: -50%;
+    }
+    100% {
+      right: 0;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .video {
+      display: none;
+    }
+    .hero-section {
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end; 
+    padding-top: 8rem; 
+    padding-bottom: 4rem;
+    min-height: 100vh;
+    }
+
+    
+    .rayo-central {
+        top: 15%; 
+        width: 200px; 
+        opacity: 0.8; /
+      }
+  }
+
+  @media (max-width: 576px) {
+    .rayo-central {
+      width: 10px;
+      top: 10%;
+
+    }
+  }
+  
+  .rayo-central {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    max-width: 100%; /* Nueva propiedad para responsividad */
+
+    z-index: 3;
+    animation: rayoDesdeArriba 1.2s ease-out forwards,
+               parpadeoRayo 1.5s infinite ease-in-out;
+  }
+  
+  @keyframes rayoDesdeArriba {
+    0% {
+      opacity: 0;
+      transform: translateX(-50%) translateY(-200px) scale(0.5);
+    }
+    70% {
+      opacity: 1;
+      transform: translateX(-50%) translateY(20px) scale(1.1);
+    }
+    100% {
+      transform: translateX(-50%) translateY(0) scale(1);
+    }
+  }
+  
+  @keyframes parpadeoRayo {
+    0%, 100% {
+      filter: brightness(1);
+      opacity: 0.9;
+    }
+    50% {
+      filter: brightness(3);
+      opacity: 1;
+    }
+  }
+  
+
+  
