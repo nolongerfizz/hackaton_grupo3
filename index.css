@@ -1,0 +1,47 @@
+/* Footer css */
+.site-footer {
+    border-top: 1px solid #ccc; /* Gray line above */
+    background-color: #f8f8f8;
+    padding: 20px 0;
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
+  }
+  
+  .footer-content { /* Limits the width of the footer content, ensuring it doesn't stretch too wide on large screens */
+    max-width: 1200px;
+    margin: 0 auto; /* center the content horizontally */
+  }
+  
+  .footer-content p {
+    margin: 0 0 10px; /* bottom margin of the paragraph */
+  }
+  
+  /* ASCII animation block */
+  .ascii-animation {
+    font-family: monospace;
+    white-space: pre;
+    font-size: 2rem;
+    line-height: 1.2;
+    text-align: center;
+    min-height: 3em;
+    display: inline-block;
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+  }
+  
+  /* Hover interaction */
+  .ascii-animation:hover {
+    transform: scale(1.05); /* ASCII art bigger */
+    text-shadow: 0 0 5px #ffd700, 0 0 10px #ffcc00; /* Add glowing effect */
+  }
+
+  /* Equipo */
+  /* Team names styling */
+.team-names {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #555;
+  }
+  /* End footer css */
+  
