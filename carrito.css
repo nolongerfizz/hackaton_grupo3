@@ -1,0 +1,57 @@
+:root {
+    /* Colores base */
+    --color-principal: #f15a29; /* Naranja vibrante */
+    --color-secundario: #1e2a47; /* Azul oscuro */
+    --color-acento: #34bfa3; /* Verde claro */
+    --color-fondo: #f4f4f4; /* Gris claro para el fondo */
+    --color-texto: #333333; /* Gris oscuro para el texto */
+    --color-boton: #f15a29; /* Naranja para botones */
+    --color-boton-hover: #e04d1a; /* Naranja más oscuro para hover */
+    /* Fuentes */
+    --fuente-principal: 'Roboto', sans-serif; /* Fuente moderna y limpia */
+    --fuente-secundaria: 'Arial', sans-serif; /* Fuente secundaria para textos más pequeños */
+    /* Espaciado y tamaño base */
+    --espaciado-base: 1rem; /* Espaciado estándar */
+    --tamano-base: 16px; /* Tamaño base de fuente */
+    --tamano-titulo: 2rem; /* Títulos más grandes */
+    --tamano-subtitulo: 1.5rem; /* Subtítulos */
+  }
+
+  .navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+    text-align: center;
+}
+
+.navbar li {
+    display: inline;
+}
+
+.navbar a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.navbar svg {
+    vertical-align: middle;
+}
+
+/* Estilo para el contador del carrito */
+.cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 5px 10px;
+    font-size: 12px;
+}
