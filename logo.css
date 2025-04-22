@@ -1,0 +1,13 @@
+body {
+    background: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .logo {
+    width: 200px;
+    transition: filter 1s ease-in-out;
+  }
